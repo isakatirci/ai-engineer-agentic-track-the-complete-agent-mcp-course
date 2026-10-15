@@ -1,0 +1,29 @@
+# Gizli anahtarlar ve ortam dosyaları
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python-version
+
+# Üretilen PDF ve ara çıktı
+dist/
+*.pdf
+
+# Yerel araç durumu (projeye ait değil)
+.serena/
+.superpowers/
+.cursor/
+
+# İşletim sistemi
+Thumbs.db
+Desktop.ini
+.DS_Store

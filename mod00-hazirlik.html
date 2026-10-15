@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modül 0: Junior Geliştirici İçin Hazırlık Modülü | Agentic AI Engineering</title>
+  <link rel="stylesheet" href="assets/css/course.css" />
+</head>
+<body>
+
+  <header class="top-navbar no-print">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand-link">
+        <span class="brand-badge">MODÜL 0</span>
+        <span>Junior Geliştirici İçin Hazırlık Modülü</span>
+      </a>
+      <div class="nav-controls">
+        <select id="page-jump-select" class="nav-select" aria-label="Sayfa Seçin"></select>
+        <a href="tam-kitap-baski.html" class="btn btn-primary">Tam Kitap (PDF)</a>
+        <button type="button" class="btn btn-print" onclick="printCurrentPage()">Bu Sayfayı PDF Yazdır</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="book-container">
+    <article class="book-page">
+
+      <section class="chapter-header">
+        <div class="chapter-meta">
+          <span>Bölüm 8 · Ön Hazırlık ve Mühendislik Temelleri</span>
+          <span>10 Teknik Alan + Geçiş Kriteri Laboratuvarı</span>
+        </div>
+        <h1>Modül 0: Junior Geliştirici İçin Hazırlık Modülü</h1>
+        <p>
+          "Agentic AI konusunda sıfırdan başlamak" ile "programlamayı da sıfırdan öğrenmek" aynı başlangıç noktası değildir.
+          Bu modül, 1. Haftadaki ajan geliştirme derslerine geçmeden önce bir junior geliştiricinin elini kolunu bağlayabilecek
+          Python, JSON, API, Terminal, Git, <code>uv</code>, <code>async/await</code>, TypeScript köprüsü ve Docker temellerini
+          tam <span class="term">Agentic AI</span> bağlamında kazandırır.
+        </p>
+      </section>
+
+      <div class="callout callout-verify">
+        <div class="callout-title">
+          <span class="badge badge-source">[Kaynak]</span>
+          <span class="badge badge-design">[Öğretim tasarımı — özgün altı haftaya ek hazırlık]</span>
+          <span>Self-Study Lab Klasörü Hakkında Doğrulama Notu</span>
+        </div>
+        <p style="margin-bottom:0;">
+          Özgün kurs sayfası, temel teknik ve programlama becerileri için bir <code>self-study lab</code> klasörü ve 1 makale bulunduğunu doğrular;
+          ancak bu klasörün içindeki bütün dosyaların isim envanteri kurs sayfasında yer almaz. Aşağıdaki 10 modüllük rehber, o klasörün
+          doğrulanmış dosya listesi iddiasıyla değil, <strong>hedef kitlenin 6 haftalık müfredatı takılmadan tamamlayabilmesi için zorunlu
+          mühendislik hazırlığı</strong> olarak tasarlanmıştır.
+        </p>
+      </div>
+
+      <div class="callout callout-design">
+        <div class="callout-title">Bilgi rozetleri</div>
+        <p style="margin-bottom:0.4rem;">Bu kitapta her bilgi parçası kaynağına göre işaretlenir. Rozeti görmezden gelmeyin; neyin kurs sayfasından geldiğini ve neyin sizin için eklenen alıştırma olduğunu ayırır.</p>
+        <ul style="margin-bottom:0.4rem;">
+          <li><span class="badge badge-source">[Kaynak]</span> Kurs sayfasında doğrudan bulunan başlık, süre veya proje vaadi.</li>
+          <li><span class="badge badge-design">[Öğretim tasarımı]</span> Junior geliştirici için yazılmış açıklama, kod ve görev. Eğitmenin videoda bu cümleleri kurduğu iddiası değildir.</li>
+          <li><span class="badge badge-verify">[Doğrulama notu]</span> Kaynaklar arasında çelişen veya kesinleşmeyen ayrıntı.</li>
+          <li><span class="badge badge-lab">[Uygulama Laboratuvarı]</span> Ana projelerin dışında, elle yapılacak ara çalışma.</li>
+        </ul>
+        <p style="margin-bottom:0;">İngilizce terimlerin Türkçe mühendislik karşılıkları <a href="index.html#bolum-4">ana portaldaki sözlükte</a> durur. Bu sayfada kalın mavi görünen her terim oradan da açılabilir.</p>
+      </div>
+
+      <!-- 10 Alan Özeti -->
+      <section>
+        <h2>1. Hazırlık Kapsamı: 10 Temel Mühendislik Becerisi</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 190px;">Alan</th>
+                <th>Kazanılacak Başlangıç Becerileri</th>
+                <th>Kursta Nerede Karşınıza Çıkacak?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Python Temelleri</strong></td>
+                <td>Fonksiyonlar, <code>while/for</code> döngüleri, <code>list/dict</code>, modüller, sınıfları (<code>class</code>) okuyabilme, <code>try/except</code> (<span class="term">Exception Handling</span>) ve <span class="term">Type Hints</span>.</td>
+                <td>Tüm haftalar; özellikle Hafta 1'de sıfırdan <code>while</code> ile <span class="term">Agent Loop</span> yazarken.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Veri ve Şema</strong></td>
+                <td><code>JSON</code> serileştirme (<code>json.loads / dumps</code>), dosya okuma/yazma, <span class="term">Pydantic</span> ile temel şema ve veri doğrulama.</td>
+                <td><span class="term">Tool Calling</span> argümanlarını ayrıştırırken ve Hafta 2–5 <span class="term">Structured Outputs</span> derslerinde.</td>
+              </tr>
+              <tr>
+                <td><strong>3. API İletişimi</strong></td>
+                <td>HTTP <span class="term">Request / Response</span> döngüsü, <code>Bearer</code> kimlik doğrulama, HTTP durum kodları (<code>200, 401, 429, 500</code>) ve <span class="term">Timeout</span>.</td>
+                <td>OpenAI, Anthropic, Gemini, Groq, Serper ve Pushover API çağrılarının tamamında.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Terminal Hakimiyeti</strong></td>
+                <td>Çalışma dizini (<code>pwd, cd, ls</code>), ortam değişkenleri, süreç durdurma (<code>Ctrl+C</code>) ve <span class="term">Stack Trace</span> (hata çıktısı) okuma.</td>
+                <td>CLI araçlarını (<code>uv</code>, <code>crewai</code>, <code>ollama</code>) çalıştırırken ve hata ayıklarken.</td>
+              </tr>
+              <tr>
+                <td><strong>5. Git ve Sırlar</strong></td>
+                <td><code>git clone</code>, <code>git status</code>, <code>git diff</code>, <code>git commit</code> ve <code>.gitignore</code> ile API anahtarlarını (<span class="term">Secrets</span>) depo dışında tutma.</td>
+                <td>Hafta 1 kurulumunda ve Hugging Face Spaces dağıtımlarında (<span class="term">Deployment</span>).</td>
+              </tr>
+              <tr>
+                <td><strong>6. Ortam ve <code>uv</code></strong></td>
+                <td>Sanal ortam (<span class="term">Virtual Environment</span>) mantığı, <code>uv sync</code>, <code>uv run</code>, <code>pyproject.toml</code> ve <code>.env</code> dosyası yönetimi.</td>
+                <td>Ders 4–7'den itibaren tüm projelerin paket ve çalışma ortamı yönetiminde.</td>
+              </tr>
+              <tr>
+                <td><strong>7. Async Python</strong></td>
+                <td><code>async def</code>, <code>await</code> ve <code>asyncio.gather</code> ile eşzamanlı (<span class="term">Concurrent</span>) G/Ç görevlerinin temel mantığı.</td>
+                <td>Hafta 2 (OpenAI Agents SDK), Hafta 4 (Playwright) ve Hafta 6 (<span class="term">MCP Client/Server</span>).</td>
+              </tr>
+              <tr>
+                <td><strong>8. Web Mimarisi</strong></td>
+                <td><span class="term">Backend</span>, <span class="term">Frontend</span>, REST API ve JSON veri sözleşmesi arasındaki ilişki.</td>
+                <td>Gradio arayüzlerinde ve Hafta 6 Ders 129'daki FastAPI + React Trading Floor uygulamasında.</td>
+              </tr>
+              <tr>
+                <td><strong>9. TypeScript Köprüsü</strong></td>
+                <td>Bir Python geliştiricisinin TypeScript kodunu okuyup çalıştırabilmesi için gereken tip, <code>import</code> ve <code>async</code> sözdizimi farkları.</td>
+                <td>Hafta 5 Gün 4 (Ders 103–105): TypeScript-Native <span class="term">Mastra</span> framework'ü ve Node tabanlı <span class="term">MCP</span> sunucuları.</td>
+              </tr>
+              <tr>
+                <td><strong>10. Container &amp; Docker</strong></td>
+                <td><span class="term">Docker Image</span> ile <span class="term">Container</span> farkı, dosya bağlama (<span class="term">Volume Mount</span>), ağ izolasyonu ve kaynak sınırı.</td>
+                <td>Hafta 3 Gün 4–5: CrewAI <span class="term">Coding Agent</span> ve <span class="term">Sandbox</span> içinde güvenli kod yürütme.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Detaylı Rehber 1: Python, JSON ve Pydantic -->
+      <section class="lesson-card">
+        <div class="lesson-header">
+          <span class="lesson-number">HAZIRLIK 1–2</span>
+          <div class="lesson-title-group">
+            <div class="lesson-title-tr">Ajan Geliştiricisi İçin Python, JSON ve Veri Sözleşmeleri</div>
+            <div class="lesson-title-en">Functions, Dictionaries, Type Hints, JSON Serialization &amp; Exception Handling</div>
+          </div>
+          <span class="badge badge-design">[Öğretim tasarımı]</span>
+        </div>
+        <div class="lesson-body">
+          <p>
+            Bir <span class="term">LLM</span> ile konuşurken aslında sürekli Python sözlükleri (<code>dict</code>), listeleri (<code>list</code>)
+            ve <code>JSON</code> metinleri alıp verirsiniz. Model bir <span class="term">Tool Call</span> yapmak istediğinde size bir Python nesnesi
+            değil, JSON formatında bir metin (örneğin <code>'{"city": "Istanbul"}'</code>) döndürür. Sizin kodunuz bu metni <code>json.loads()</code>
+            ile ayrıştırır, doğrular ve ilgili Python fonksiyonuna iletir.
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-header">
+              <span>prep_01_python_json_schema.py — Tip Belirtimi, JSON Ayrıştırma ve Hata Yönetimi</span>
+            </div>
+            <pre><code>import json
+from typing import Any
+from pydantic import BaseModel, Field, ValidationError
+
+# 1. Veri Sözleşmesi (Data Contract): Modelden veya dış API'den beklediğimiz yapı
+class ToolCallInput(BaseModel):
+    ticker: str = Field(..., min_length=1, max_length=10, description="Hisse sembolü, ör. AAPL")
+    days: int = Field(default=7, ge=1, le=90, description="Kaç günlük veri çekileceği")
+
+# 2. Tip belirtimli (Type-Hinted) ve hata korumalı bir Tool fonksiyonu
+def fetch_price_summary(raw_json_arguments: str) -> dict[str, Any]:
+    """Modelden gelen ham JSON argümanlarını doğrular ve sonucu sözlük olarak döndürür."""
+    try:
+        parsed_data = json.loads(raw_json_arguments)
+        validated = ToolCallInput(**parsed_data)
+    except json.JSONDecodeError as exc:
+        # Model bozuk JSON üretirse uygulamayı çökertme, anlaşılır hata döndür
+        return {"ok": False, "error": f"Geçersiz JSON formatı: {exc.msg}"}
+    except ValidationError as exc:
+        # Eksik veya sınır dışı parametre gelirse hatayı yakala
+        return {"ok": False, "error": f"Şema doğrulama hatası: {exc.errors()[0]['msg']}"}
+
+    # Normal iş mantığı (Simülasyon)
+    return {
+        "ok": True,
+        "ticker": validated.ticker.upper(),
+        "days": validated.days,
+        "average_price": 194.50
+    }
+
+if __name__ == "__main__":
+    # Başarılı senaryo
+    print(fetch_price_summary('{"ticker": "msft", "days": 14}'))
+    # Başarısız senaryo (days=-5 şema kuralını ihlal eder ama program çökmez!)
+    print(fetch_price_summary('{"ticker": "msft", "days": -5}'))</code></pre>
+          </div>
+
+          <div class="callout callout-danger">
+            <div class="callout-title">Bu Bileşen Olmazsa Ne Bozulur?</div>
+            <p style="margin-bottom:0;">
+              Eğer <code>json.loads</code> ve <span class="term">Pydantic Validation</span> adımını <code>try/except</code> olmadan doğrudan
+              çalıştırırsanız, LLM'in ürettiği tek bir eksik tırnak işareti veya negatif sayı tüm <span class="term">Agent Loop</span>'u
+              <code>Unhandled Exception</code> ile yarıda keser.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detaylı Rehber 2: Ortam, Git, .env ve API Güvenilirliği -->
+      <section class="lesson-card">
+        <div class="lesson-header">
+          <span class="lesson-number">HAZIRLIK 3–6</span>
+          <div class="lesson-title-group">
+            <div class="lesson-title-tr">Terminal, Git, <code>uv</code> Ortamı, <code>.env</code> Sırları ve HTTP API Çağrıları</div>
+            <div class="lesson-title-en">Environment Isolation, Secret Management, HTTP Status Codes &amp; Timeouts</div>
+          </div>
+          <span class="badge badge-design">[Öğretim tasarımı]</span>
+        </div>
+        <div class="lesson-body">
+          <p>
+            Junior geliştiricilerin en sık yaptığı iki hata şunlardır: <strong>(1)</strong> Paketleri işletim sisteminin genel Python kurulumuna
+            (<code>global pip</code>) yükleyip sürüm çakışması yaşamak ve <strong>(2)</strong> <code>sk-...</code> ile başlayan API anahtarını doğrudan
+            <code>main.py</code> içine yazıp GitHub'a göndermek.
+          </p>
+
+          <div class="grid-2">
+            <div class="card">
+              <h4>Temel Terminal ve <code>uv</code> Komutları</h4>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span>PowerShell / Terminal</span></div>
+                <pre><code># 1. Projeyi klonla ve dizine gir
+git clone https://github.com/ornek/agents-course.git
+cd agents-course
+
+# 2. uv ile izole sanal ortamı ve bağımlılıkları kur
+uv sync
+
+# 3. .env dosyasının Git tarafından yoksayıldığını doğrula
+git check-ignore -v .env
+
+# 4. Python dosyasını uv ortamı içinde çalıştır
+uv run python main.py</code></pre>
+              </div>
+            </div>
+            <div class="card">
+              <h4>HTTP Durum Kodları (<span class="term">Status Codes</span>)</h4>
+              <ul>
+                <li><code>200 OK</code>: İstek başarılı, model yanıtı döndü.</li>
+                <li><code>400 Bad Request</code>: Gönderdiğiniz JSON şeması veya parametre hatalı (tekrar denemek hatayı çözmez!).</li>
+                <li><code>401 Unauthorized</code>: API anahtarı eksik, yanlış veya süresi dolmuş.</li>
+                <li><code>429 Too Many Requests</code>: <span class="term">Rate Limit</span> veya kredi kotası aşıldı (kısa beklemeli <span class="term">Backoff</span> gerekir).</li>
+                <li><code>500 / 503 Server Error</code>: Sağlayıcı tarafında geçici sorun.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detaylı Rehber 3: Async Python, Web, TypeScript Köprüsü ve Docker -->
+      <section class="lesson-card page-break-before">
+        <div class="lesson-header">
+          <span class="lesson-number">HAZIRLIK 7–10</span>
+          <div class="lesson-title-group">
+            <div class="lesson-title-tr">Async Python, Web Mimarisi, TypeScript Köprüsü ve Docker Konteynerleri</div>
+            <div class="lesson-title-en">Concurrency with asyncio, Backend/Frontend Split, TypeScript for Python Devs &amp; Docker Sandboxes</div>
+          </div>
+          <span class="badge badge-design">[Öğretim tasarımı]</span>
+        </div>
+        <div class="lesson-body">
+          <h3>A. Async Python (<code>async</code> / <code>await</code>) Mantığı</h3>
+          <p>
+            Bir LLM yanıtı ortalama 2 ile 10 saniye arasında sürer. Bu sürede bilgisayarınızın işlemcisi (<span class="term">CPU</span>) aslında
+            hiçbir iş yapmaz; sadece ağdan (<span class="term">Network I/O</span>) yanıt gelmesini bekler. <code>asyncio</code>, bir modelden yanıt
+            beklerken diğer ajanların veya araçların beklemeye takılmadan aynı anda (<span class="term">Concurrent</span>) çalışmasını sağlar.
+            Eşzamanlı ağ beklemesi ile işlemciyi bölen paralellik aynı şey değildir: burada kazanç, bekleme sürelerinin üst üste binmesidir.
+          </p>
+          <div class="code-block-wrapper">
+            <div class="code-header"><span>prep_07_async.py — Üç sahte model çağrısını sırayla ve asyncio.gather ile</span></div>
+            <pre><code>import asyncio
+import time
+
+async def fake_llm(name: str) -> str:
+    await asyncio.sleep(2)  # ağ beklemesini taklit eder, CPU'yu meşgul etmez
+    return f"{name} yaniti hazir"
+
+async def main() -> None:
+    started = time.perf_counter()
+    for name in ("plan", "arastirma", "rapor"):
+        await fake_llm(name)
+    serial = time.perf_counter() - started
+
+    started = time.perf_counter()
+    await asyncio.gather(fake_llm("plan"), fake_llm("arastirma"), fake_llm("rapor"))
+    concurrent = time.perf_counter() - started
+    print(f"sirali={serial:.1f}s eszamanli={concurrent:.1f}s")
+
+if __name__ == "__main__":
+    asyncio.run(main())</code></pre>
+          </div>
+          <div class="trace-box">sirali=6.0s eszamanli=2.0s</div>
+
+          <h3>B. Web Mimarisi: Backend, Frontend ve API</h3>
+          <p>
+            Hafta 1'deki Gradio arayüzü bu üçünü tek süreçte birleştirir. Hafta 6'da Trading Floor aynı işi ayırır:
+            <span class="term">React</span> tarayıcıda durur, <span class="term">FastAPI</span> istekleri karşılar, model çağrısı backend'in arkasında kalır.
+            Tarayıcı API anahtarını görmez.
+          </p>
+          <div class="diagram-box">
+            <div class="flow-diagram">
+              <div class="flow-node">Frontend (React / Gradio)</div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-node node-tool">HTTP + JSON</div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-node node-state">Backend (FastAPI)</div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-node node-guard">Model ve araçlar</div>
+            </div>
+            <div class="diagram-caption">İstek tarayıcıdan gelir, anahtar ve araç çalıştırması sunucuda kalır.</div>
+          </div>
+          <div class="code-block-wrapper">
+            <div class="code-header"><span>prep_08_health.py — En küçük API sözleşmesi</span></div>
+            <pre><code>from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/api/health")
+def health() -> dict:
+    return {"ok": True, "service": "trading-floor"}</code></pre>
+          </div>
+
+          <h3>C. Python Geliştiricisi İçin TypeScript Köprüsü (5. Hafta Mastra İçin)</h3>
+          <p>
+            5. Haftada göreceğimiz <span class="term">Mastra</span> framework'ü TypeScript tabanlıdır. Python biliyorsanız aşağıdaki birebir eşleme
+            tablosuyla TypeScript kodlarını hiç yabancılık çekmeden okuyabilirsiniz:
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kavram</th>
+                  <th>Python Karşılığı</th>
+                  <th>TypeScript (Mastra / Node) Karşılığı</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Paket Yöneticisi &amp; Dosyası</td>
+                  <td><code>uv</code> / <code>pyproject.toml</code></td>
+                  <td><code>npm</code> veya <code>pnpm</code> / <code>package.json</code></td>
+                </tr>
+                <tr>
+                  <td>Şema Doğrulama Kütüphanesi</td>
+                  <td><code>Pydantic (BaseModel)</code></td>
+                  <td><code>Zod (z.object({ ... }))</code></td>
+                </tr>
+                <tr>
+                  <td>Asenkron Fonksiyon</td>
+                  <td><code>async def run_agent(prompt: str) -&gt; str:</code></td>
+                  <td><code>async function runAgent(prompt: string): Promise&lt;string&gt; { ... }</code></td>
+                </tr>
+                <tr>
+                  <td>Sözlük / Nesne Tanımı</td>
+                  <td><code>config = {"model": "gpt-4o-mini"}</code></td>
+                  <td><code>const config = { model: "gpt-4o-mini" };</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>D. Docker Container ve Sandbox Mantığı (3. Hafta Coding Agent İçin)</h3>
+          <p>
+            Bir ajana <em>"Python kodu yaz ve çalıştır"</em> yetkisi verdiğinizde, o kodu kendi bilgisayarınızda doğrudan <code>exec()</code> veya
+            <code>subprocess</code> ile çalıştırmak çok tehlikelidir (ajan yanlışlıkla dosyalarınızı silebilir veya <span class="term">Environment Variables</span>
+            içindeki anahtarlarınızı okuyabilir). <strong>Docker Container</strong>, ajanın ürettiği kodu kendi işletim sisteminizden yalıtılmış
+            (<span class="term">Isolated Sandbox</span>), geçici bir sanal kutu içinde çalıştırmanızı sağlar.
+          </p>
+          <div class="code-block-wrapper">
+            <div class="code-header"><span>PowerShell — ağı kapalı, belleği sınırlı, tek seferlik sanal kutu</span></div>
+            <pre><code>docker run --rm --network none --memory 256m -v "${PWD}/sandbox:/work" python:3.12-slim python /work/main.py</code></pre>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Bu komut neyi izole eder</th><th>Neyi izole etmez</th></tr></thead>
+              <tbody>
+                <tr><td>Konteynerin dışarı ağ açmasını (<code>--network none</code>)</td><td>Bağladığınız klasörün içindeki dosyaları; ajan oraya yazabilir</td></tr>
+                <tr><td>Bellek tavanını (<code>--memory 256m</code>)</td><td>Docker daemon kapalıysa hiçbir şeyi; komut başlamadan düşer</td></tr>
+                <tr><td>Süreç bitince kutunun silinmesini (<code>--rm</code>)</td><td>İmajın içine gömülmüş bir sırrı; imaja anahtar koymayın</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hazırlık Geçiş Kriteri Laboratuvarı -->
+      <section class="lesson-card">
+        <div class="lesson-header">
+          <span class="lesson-number">GEÇİŞ KRİTERİ</span>
+          <div class="lesson-title-group">
+            <div class="lesson-title-tr">Hafta 1'e Başlamadan Önce Kendini Sına: Hazırlık Geçiş Laboratuvarı</div>
+            <div class="lesson-title-en">Self-Check Gate: Environment, Secret Separation, JSON Parsing &amp; Error Recovery</div>
+          </div>
+          <span class="badge badge-lab">[Uygulama Laboratuvarı]</span>
+        </div>
+        <div class="lesson-body">
+          <p>
+            <strong>Hazırlık Geçiş Kriteri:</strong> Öğrenci temiz bir ortamda projeyi kurabilmeli, API anahtarını koddan ayırabilmeli, bir JSON
+            girdisini okuyabilmeli ve başarısız bir isteği anlaşılır biçimde yönetebilmelidir. Aşağıdaki <code>gate_check.py</code> betiğini
+            çalıştırıp çıktısını doğruladığınızda 1. Haftaya tamamen hazırsınız demektir:
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-header">
+              <span>gate_check.py — Hazırlık Geçiş Doğrulama Betiği</span>
+            </div>
+            <pre><code>import os
+import json
+import urllib.request
+import urllib.error
+from dotenv import load_dotenv
+
+def verify_readiness(raw_config_json: str) -> dict:
+    # 1. Ortam değişkenlerini (.env) yükle ve koddan ayrıldığını doğrula
+    load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY", "")
+    has_clean_key = bool(api_key and api_key.startswith("sk-") and len(api_key) > 20)
+
+    # 2. JSON girdisini güvenli ayrıştır
+    try:
+        cfg = json.loads(raw_config_json)
+        timeout_sec = int(cfg.get("timeout", 5))
+    except (json.JSONDecodeError, ValueError) as err:
+        return {"ready": False, "stage": "json_parse", "reason": str(err)}
+
+    # 3. Dış servis çağrısında Timeout ve Hata yönetimini doğrula
+    req = urllib.request.Request("https://httpbin.org/status/429", method="GET")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout_sec) as resp:
+            status = resp.status
+    except urllib.error.HTTPError as http_err:
+        # 429 hatasını çökmeden yakalayıp anlamlandırabilmeliyiz
+        handled_error = f"HTTP {http_err.code} yakalandı: Rate limit / kota kontrolü aktif."
+    except Exception as net_err:
+        handled_error = f"Ağ/Timeout hatası güvenli yakalandı: {net_err}"
+    else:
+        handled_error = f"Beklenmeyen durum: {status}"
+
+    return {
+        "ready": True,
+        "env_key_configured": has_clean_key,
+        "timeout_configured": timeout_sec,
+        "error_handling_proof": handled_error,
+    }
+
+if __name__ == "__main__":
+    result = verify_readiness('{"timeout": 4}')
+    print(json.dumps(result, indent=2, ensure_ascii=False))</code></pre>
+          </div>
+
+          <div class="trace-box">[Beklenen Terminal Çıktısı]
+{
+  "ready": true,
+  "env_key_configured": true,
+  "timeout_configured": 4,
+  "error_handling_proof": "HTTP 429 yakalandı: Rate limit / kota kontrolü aktif."
+}</div>
+        </div>
+      </section>
+
+      <nav class="page-footer-nav no-print">
+        <a href="index.html" class="btn btn-outline">← Önceki: Ana Portal &amp; 132 Ders Haritası</a>
+        <a href="hafta01-gun01.html" class="btn btn-primary">Sonraki: Hafta 1 · Gün 1 (Ders 1–8) →</a>
+      </nav>
+
+    </article>
+  </main>
+
+  <script src="assets/js/course.js"></script>
+</body>
+</html>

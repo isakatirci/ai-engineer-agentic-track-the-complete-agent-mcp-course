@@ -1,0 +1,774 @@
+/* ==========================================================================
+   Agentic AI Engineering: Zero-to-Hero Türkçe Kurs Kitabı Tasarım Sistemi
+   Ekran Okuma + Kusursuz A4 PDF (@media print) Stilleri
+   ========================================================================== */
+
+:root {
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-code: #0f172a;
+  --bg-trace: #111827;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: #cbd5e1;
+  --border-light: #e2e8f0;
+
+  /* Vurgu ve Anlamsal Renkler */
+  --primary: #1d4ed8;
+  --primary-soft: #dbeafe;
+  --primary-dark: #1e3a8a;
+
+  --source-bg: #dcfce7;
+  --source-text: #166534;
+  --source-border: #86efac;
+
+  --design-bg: #e0e7ff;
+  --design-text: #1e40af;
+  --design-border: #93c5fd;
+
+  --verify-bg: #fef3c7;
+  --verify-text: #92400e;
+  --verify-border: #fcd34d;
+
+  --danger-bg: #fee2e2;
+  --danger-text: #991b1b;
+  --danger-border: #fca5a5;
+
+  --lab-bg: #f3e8ff;
+  --lab-text: #6b21a8;
+  --lab-border: #d8b4fe;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Üst Navigasyon Barı (Ekran İçin, Baskıda Gizlenir)
+   ========================================================================== */
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(8px);
+  color: #f8fafc;
+  border-bottom: 1px solid #334155;
+  padding: 0.65rem 1.25rem;
+}
+
+.navbar-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brand-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.brand-badge {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-select {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  border-radius: var(--radius-sm);
+  padding: 0.38rem 0.65rem;
+  font-size: 0.85rem;
+  max-width: 280px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-print {
+  background: #059669;
+  color: #ffffff;
+}
+.btn-print:hover {
+  background: #047857;
+}
+
+.btn-outline {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+.btn-outline:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Ana Sayfa ve Kitapçık Düzeni
+   ========================================================================== */
+.book-container {
+  max-width: 1080px;
+  margin: 1.75rem auto 4rem auto;
+  padding: 0 1.25rem;
+}
+
+.book-page {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem 2.75rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Tipografi ve Başlıklar
+   ========================================================================== */
+h1, h2, h3, h4 {
+  color: var(--text-main);
+  line-height: 1.3;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 2.05rem;
+  letter-spacing: -0.02em;
+  margin-top: 0.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--border-light);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.02rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.95rem;
+  color: var(--text-secondary);
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 1.4rem;
+  color: var(--text-secondary);
+}
+
+li {
+  margin-bottom: 0.38rem;
+}
+
+li strong {
+  color: var(--text-main);
+}
+
+code {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, Monaco, monospace;
+  font-size: 0.88em;
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 0.15rem 0.38rem;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+/* İngilizce Terim Vurgusu */
+.term {
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: #eff6ff;
+  padding: 0.08rem 0.35rem;
+  border-radius: 4px;
+  border-bottom: 1px dashed #60a5fa;
+}
+
+/* ==========================================================================
+   Bilgi Türü Rozetleri ([Kaynak], [Öğretim tasarımı], [Doğrulama notu])
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.badge-source {
+  background: var(--source-bg);
+  color: var(--source-text);
+  border: 1px solid var(--source-border);
+}
+
+.badge-design {
+  background: var(--design-bg);
+  color: var(--design-text);
+  border: 1px solid var(--design-border);
+}
+
+.badge-verify {
+  background: var(--verify-bg);
+  color: var(--verify-text);
+  border: 1px solid var(--verify-border);
+}
+
+.badge-lab {
+  background: var(--lab-bg);
+  color: var(--lab-text);
+  border: 1px solid var(--lab-border);
+}
+
+.badge-project {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.badge-duration {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+
+/* ==========================================================================
+   Kapak / Gün Başlığı Alanı (Hero Banner)
+   ========================================================================== */
+.chapter-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 2rem 2.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.chapter-header .chapter-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: #bfdbfe;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.chapter-header h1 {
+  color: #ffffff;
+  margin: 0 0 0.65rem 0;
+  font-size: 1.85rem;
+}
+
+.chapter-header p {
+  color: #e2e8f0;
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+/* ==========================================================================
+   Bilgi ve Uyarı Kutuları (Callouts)
+   ========================================================================== */
+.callout {
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.35rem;
+  margin: 1.25rem 0;
+  border-left: 5px solid var(--primary);
+  background: var(--bg-subtle);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.callout-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-main);
+}
+
+.callout-source {
+  background: #f0fdf4;
+  border-left-color: #16a34a;
+}
+
+.callout-design {
+  background: #eff6ff;
+  border-left-color: #2563eb;
+}
+
+.callout-verify {
+  background: #fffbeb;
+  border-left-color: #d97706;
+}
+
+.callout-danger {
+  background: #fef2f2;
+  border-left-color: #dc2626;
+}
+
+.callout-lab {
+  background: #faf5ff;
+  border-left-color: #9333ea;
+}
+
+/* ==========================================================================
+   Ders Kartları ve 8 Adımlı Öğretim Standardı
+   ========================================================================== */
+.lesson-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  margin: 2.25rem 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson-header {
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.15rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.lesson-number {
+  background: var(--primary-dark);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+
+.lesson-title-group {
+  flex: 1;
+  min-width: 260px;
+}
+
+.lesson-title-tr {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0.15rem 0;
+}
+
+.lesson-title-en {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", Consolas, monospace;
+  margin: 0;
+}
+
+.lesson-body {
+  padding: 1.5rem;
+}
+
+/* 8 Adımlı Öğretim Standardı Izgarası */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.step-box {
+  border: 1px solid var(--border-light);
+  border-left: 4px solid #3b82f6;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  background: #fcfdff;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.step-box.step-need { border-left-color: #2563eb; }
+.step-box.step-model { border-left-color: #7c3aed; }
+.step-box.step-code { border-left-color: #059669; }
+.step-box.step-extend { border-left-color: #0891b2; }
+.step-box.step-fail { border-left-color: #dc2626; background: #fffafa; }
+.step-box.step-observe { border-left-color: #4f46e5; }
+.step-box.step-task { border-left-color: #d97706; background: #fffdf7; }
+.step-box.step-why { border-left-color: #0f172a; background: #f8fafc; }
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 0.93rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1e293b;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Kod Blokları ve Trace / Terminal Çıktıları
+   ========================================================================== */
+.code-block-wrapper {
+  margin: 0.85rem 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid #334155;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.code-header {
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+.copy-btn {
+  background: #334155;
+  color: #e2e8f0;
+  border: none;
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.copy-btn:hover {
+  background: #475569;
+}
+
+pre {
+  margin: 0;
+  padding: 0.95rem 1.1rem;
+  background: var(--bg-code);
+  color: #f8fafc;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+.trace-box {
+  background: #090d16;
+  color: #a7f3d0;
+  border: 1px solid #1e293b;
+  border-left: 4px solid #10b981;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.1rem;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.81rem;
+  line-height: 1.5;
+  margin: 0.75rem 0;
+  white-space: pre-wrap;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* ==========================================================================
+   Tablolar ve Mimari Diyagram Kutuları
+   ========================================================================== */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.1rem 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: #ffffff;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f1f5f9;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.diagram-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.diagram-caption {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.flow-node {
+  background: #ffffff;
+  border: 2px solid #2563eb;
+  color: #0f172a;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.flow-node.node-tool { border-color: #059669; background: #f0fdf4; }
+.flow-node.node-state { border-color: #7c3aed; background: #faf5ff; }
+.flow-node.node-guard { border-color: #d97706; background: #fffbeb; }
+
+.flow-arrow {
+  color: #64748b;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Alt Sayfa Geçiş Navigasyonu (Önceki / Sonraki Gün)
+   ========================================================================== */
+.page-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-light);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.15rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  background: #ffffff;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* ==========================================================================
+   A4 BASKI VE PDF KURALLARI (@media print)
+   ========================================================================== */
+@page {
+  size: A4 portrait;
+  margin: 14mm 12mm 16mm 12mm;
+}
+
+@media print {
+  html {
+    font-size: 10.5pt;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .top-navbar,
+  .no-print,
+  .copy-btn,
+  .page-footer-nav {
+    display: none !important;
+  }
+
+  .book-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .book-page {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 0 10mm 0 !important;
+  }
+
+  .page-break-before,
+  .print-new-page {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  .lesson-card {
+    break-inside: auto;
+    margin: 6mm 0 !important;
+    border: 1px solid #94a3b8 !important;
+    box-shadow: none !important;
+  }
+
+  .lesson-header,
+  .step-box,
+  .callout,
+  .code-block-wrapper,
+  .trace-box,
+  .diagram-box,
+  .table-wrap,
+  .card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  h1, h2, h3, h4 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    font-size: 8.5pt !important;
+    background: #0f172a !important;
+    color: #f8fafc !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
